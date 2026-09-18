@@ -1,141 +1,109 @@
-# NETWORKWALKS-B083-WK2-PM1-CYBERSECURITY-LAB-SETUP
+# 🔐 NETWORKWALKS-B083-WEEK2-PM1-CYBERSECURITY-RECON-LAB
 
+# 🌐 Web Reconnaissance & Information Gathering Lab
 
 **Track:** Cybersecurity Fundamentals  
-**Environment:** Kali Linux  
+**Environment:** Kali Linux 🐉  
 **Target:** `networkwalks.com`  
-**Exercise:** Authorized Reconnaissance
+**Exercise:** Authorized Reconnaissance ✅
 
-## Overview
+## 📌 Overview
 
-This lab focused on using reconnaissance tools in Kali Linux to collect publicly available information about an assigned web domain. The exercise covered domain registration, web technology identification, DNS resolution, HTTP headers, WAF detection, DNS enumeration, and open-source information gathering.
+This lab focuses on performing basic reconnaissance and information gathering against an authorized domain using Kali Linux tools. The goal is to understand how security professionals collect publicly available information before further security assessment.
 
-## Authorization & Responsible Testing
+## 🛡️ Authorization & Responsible Testing
 
-All activities documented in this repository were performed as part of an authorized cybersecurity exercise. The tools were used for information gathering and reconnaissance only.
+All reconnaissance activities in this lab were performed as part of an authorized cybersecurity exercise. The purpose was limited to information gathering and analysis without attempting to exploit or damage the target.
 
-No exploitation, unauthorized access, or attempts to compromise the target were performed.
+## 🎯 Purpose of the Exercise
 
-Reconnaissance commands should only be used against systems and domains where appropriate permission has been provided.
+The main objectives were to:
 
-## Purpose of the Exercise
+- 🔎 Gather domain and registration information
+- 🌐 Identify DNS and IP information
+- 🧩 Detect technologies used by the website
+- 🔒 Check for web application firewall protection
+- 📡 Examine DNS records
+- 🗂️ Collect publicly available information
 
-The information-gathering stage is an important part of a security assessment. Before investigating potential vulnerabilities, security professionals first need to understand what information is publicly visible about a target.
-
-This exercise provided hands-on practice with several tools that can be used to build an initial picture of a web domain and its publicly exposed infrastructure.
-
-## Reconnaissance Method
-
-**Target:** `networkwalks.com`
+## 🧰 Reconnaissance Approach
 
 | Step | Tool | Purpose |
 |------|------|---------|
-| 1 | WHOIS | Retrieve domain registration information |
-| 2 | WhatWeb | Identify web technologies |
-| 3 | NSLookup | Resolve the domain to an IP address |
-| 4 | cURL | Inspect HTTP response headers |
-| 5 | Wafw00f | Check for a detectable WAF |
-| 6 | DNSRecon | Enumerate DNS records |
-| 7 | theHarvester | Gather publicly available information |
+| 1️⃣ | `whois` | Domain registration information |
+| 2️⃣ | `whatweb` | Website technologies |
+| 3️⃣ | `nslookup` | DNS and IP resolution |
+| 4️⃣ | `curl -I` | HTTP response headers |
+| 5️⃣ | `wafw00f` | WAF detection |
+| 6️⃣ | `dnsrecon` | DNS reconnaissance |
+| 7️⃣ | `theHarvester` | Public information gathering |
 
-## Step 1 — WHOIS
+## 🔍 Step 1 — WHOIS
 
-The WHOIS command was used to examine publicly available registration information associated with the target domain.
-
-**Command:** `whois networkwalks.com`
+Used `whois` to collect publicly available domain registration and ownership-related information.
 
 ![Step 1](1-Step-one.png)
 
-## Step 2 — WhatWeb
+## 🧪 Step 2 — WhatWeb
 
-WhatWeb was used to fingerprint the website and identify technologies that could be detected from the target.
-
-**Command:** `whatweb networkwalks.com`
+Used `whatweb` to identify technologies and components detected on the target website.
 
 ![Step 2](2-Step-two.png)
 
-## Step 3 — DNS Resolution
+## 🌐 Step 3 — NSLookup
 
-NSLookup was used to determine the IP address associated with the target domain.
-
-**Command:** `nslookup networkwalks.com`
-
-**Result:** `192.232.216.135`
+Used `nslookup` to resolve the domain name and identify its associated IP address.
 
 ![Step 3](3-Step-three.png)
 
-## Step 4 — HTTP Headers
+## 📩 Step 4 — HTTP Headers
 
-cURL was used to inspect the HTTP response headers returned by the target website.
-
-**Command:** `curl -I https://networkwalks.com`
+Used `curl -I` to examine the HTTP response headers returned by the website.
 
 ![Step 4](4-Step-four.png)
 
-## Step 5 — WAF Detection
+## 🧱 Step 5 — WAF Detection
 
-Wafw00f was used to determine whether a Web Application Firewall could be detected protecting the website.
-
-**Command:** `wafw00f networkwalks.com`
+Used `wafw00f` to check whether a Web Application Firewall could be detected.
 
 ![Step 5](5-Step-five.png)
 
-## Step 6 — DNS Enumeration
+## 📡 Step 6 — DNSRecon
 
-DNSRecon was used to gather publicly available DNS records and information associated with the domain.
-
-**Command:** `dnsrecon -d networkwalks.com`
+Used `dnsrecon` to gather additional DNS-related information about the domain.
 
 ![Step 6](6-Step-six.png)
 
-## Step 7 — Open-Source Reconnaissance
+## 🗃️ Step 7 — TheHarvester
 
-theHarvester was used to gather publicly available information related to the target domain from open sources.
+Used `theHarvester` to collect publicly available information associated with the target domain.
 
 ![Step 7](7-Step-seven.png)
 
-## Findings Summary
+## 📊 Findings Summary
 
-The seven reconnaissance activities provided different types of information about the target:
+The reconnaissance process demonstrated how different tools can provide different types of information about the same target. Combining the results gives a broader view of the domain's public-facing infrastructure.
 
-- **WHOIS:** Domain registration information
-- **WhatWeb:** Detectable web technologies
-- **NSLookup:** Domain-to-IP resolution
-- **cURL:** HTTP response information
-- **Wafw00f:** WAF detection results
-- **DNSRecon:** Public DNS records
-- **theHarvester:** Publicly available domain-related information
+## 💡 Security Perspective
 
-The DNS resolution step successfully identified `192.232.216.135` as the IP address returned for `networkwalks.com`.
+Reconnaissance is an important early stage of cybersecurity assessment because publicly exposed information can help security teams understand what information is visible to outsiders and identify areas that may require better protection.
 
-## Security Perspective
+## 🚀 Key Takeaways
 
-Reconnaissance can reveal information about a target's technology stack, DNS infrastructure, web configuration, and publicly accessible data.
+- 🧠 Learned the purpose of common reconnaissance tools
+- 💻 Practiced information gathering in Kali Linux
+- 🌐 Improved understanding of DNS and web technologies
+- 🔎 Learned how different tools complement each other
+- 🛡️ Understood the importance of responsible reconnaissance
 
-However, discovering information does not automatically mean that a security vulnerability exists. Further authorized assessment would be required to determine whether any finding represents an actual security weakness.
+## 🛠️ Tools & Skills
 
-## Key Takeaways
+**Tools:** Kali Linux, WHOIS, WhatWeb, NSLookup, cURL, WAFW00F, DNSRecon, TheHarvester
 
-This exercise helped develop practical experience with:
+**Skills:** Web Reconnaissance, DNS Enumeration, Information Gathering, OSINT, Cybersecurity Fundamentals
 
-- Linux-based reconnaissance tools
-- Domain and DNS enumeration
-- Web technology fingerprinting
-- HTTP header analysis
-- WAF identification
-- Open-source intelligence gathering
-- Documenting technical results with evidence
+## 👤 Author
 
-The lab demonstrated how multiple reconnaissance techniques can be combined to create an initial overview of a target's publicly visible infrastructure.
+**Author:** [Malak Ashraf]
 
-## Tools & Skills
-
-`Kali Linux` `Cybersecurity` `Network Reconnaissance` `Web Reconnaissance` `DNS Enumeration` `OSINT` `WHOIS` `WhatWeb` `NSLookup` `cURL` `Wafw00f` `DNSRecon` `theHarvester`
-
-## Author
-
-**Author:** [Your Name]
-
-**Field:** Cybersecurity / Information Security
-
-**Environment:** Kali Linux
+**Focus:** Cybersecurity & Information Security
