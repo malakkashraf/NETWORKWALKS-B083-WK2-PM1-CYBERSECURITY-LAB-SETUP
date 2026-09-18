@@ -72,6 +72,9 @@ Used `wafw00f` to check whether a Web Application Firewall could be detected.
 
 Used `dnsrecon` to gather additional DNS-related information about the domain.
 
+![Step 6](6-Step-six.png)
+
+⚠️ Note: The timeout was due to the target DNS servers not responding to the enumeration requests, not an error in my configuration.
 
 ## 🗃️ Step 7 — TheHarvester
 
